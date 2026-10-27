@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom atmospheric glow and candle flickering */
+@keyframes candleFlicker {
+  0%, 100% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.45));
+  }
+  25% {
+    opacity: 0.82;
+    filter: drop-shadow(0 0 12px rgba(217, 119, 6, 0.35));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(251, 191, 36, 0.6));
+  }
+  75% {
+    opacity: 0.88;
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.4));
+  }
+}
+
+.candle-glow {
+  animation: candleFlicker 3.2s ease-in-out infinite;
+}
+
+/* Parchment texture simulation */
+.bg-parchment {
+  background-color: #121110;
+  background-image: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.08) 0%, transparent 70%);
+}
+
+.bg-library-shadow {
+  background: radial-gradient(circle at 50% 30%, rgba(18, 18, 22, 0.9) 0%, #08080a 100%);
+}
+
+/* Subtle archival custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d10;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
